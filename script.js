@@ -1,8 +1,8 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("user-input");
-var ul = document.querySelector("ul");
-var list = document.querySelectorAll(".todo");
-var deleteList = document.getElementsByClassName("delete-list");
+let button = document.getElementById("enter");
+let input = document.getElementById("user-input");
+let ul = document.querySelector("ul");
+let list = document.querySelectorAll(".todo");
+let deleteList = document.getElementsByClassName("delete-list");
 // var li = document.getElementsByTagName("li");
 
 function inputLength() {
@@ -10,15 +10,15 @@ function inputLength() {
 }
 
 function removeList(a) {
-  for (var i = 0; i < deleteList.length; i++)
+  for (let i = 0; i < deleteList.length; i++)
     a.addEventListener("click", function () {
       a.parentNode.remove();
     });
 }
 
 function addDeleteButton() {
-  for (var i = 0; i < list.length; i++) {
-    var btn = document.createElement("button");
+  for (let i = 0; i < list.length; i++) {
+    let btn = document.createElement("button");
     btn.classList.add("delete-list");
     btn.innerHTML = "Delete";
     list[i].appendChild(btn);
@@ -29,10 +29,10 @@ function addDeleteButton() {
 addDeleteButton();
 
 function createListElement() {
-  var btn = document.createElement("button");
+  let btn = document.createElement("button");
   btn.classList.add("delete-list");
   btn.appendChild(document.createTextNode("Delete")); // btn.innerHTML = "Delete"
-  var li = document.createElement("li");
+  let li = document.createElement("li");
   li.appendChild(document.createTextNode(input.value));
   li.appendChild(btn);
   ul.appendChild(li);
